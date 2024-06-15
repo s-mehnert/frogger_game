@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timerId = null;
             document.removeEventListener('keyup', moveFrog);
         } else {
+            document.querySelector('.starting-block').classList.add('frog');
             timerId = setInterval(movePieces, 1000);
             document.addEventListener('keyup', moveFrog);
         }

@@ -1,34 +1,50 @@
+body {
+    width: 450px;
+    text-align: center;
+}
+
+button {
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    height: 35px;
+    width: 130px;
+    border: hidden;
+}
+
+#result {
+    font-weight: bold;
+    color: purple;
+    font-size: xx-large;
+}
+
 .grid {
     border: 1px solid;
     display: flex;
     flex-wrap: wrap;
-    height: 360px;
-    width: 360px;
+    height: 450px;
+    width: 450px;
+    background-color: rgb(211, 246, 194);
 }
 
 .grid div {
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
 }
 
 .ending-block {
-    background-color: red;
+    background-image: url("images/lotus.png");
+    background-size: cover;
 }
 
 .starting-block {
-    background-color: blue;
+    background-image: url("images/pebbles.png");
+    background-size: cover;
 }
 
 .c1 {
-    background-color: black;
-}
-
-.c4 {
-    background-color: yellow;
-}
-
-.c5 {
-    background-color: blueviolet;
+    background-image: url("images/car.png");
+    background-size: cover;
 }
 
 .c2, .c3 {
@@ -36,7 +52,8 @@
 }
 
 .l1, .l2, .l3 {
-    background-color: brown;
+    background-image: url("images/wood.png");
+    background-size: cover;
 }
 
 .l4, .l5 {
@@ -44,5 +61,10 @@
 }
 
 .frog {
-    background-color: green;
+    background-image: url("images/frog.png");
+    background-size: cover;
+}
+
+footer {
+    font-size: 8px;
 }

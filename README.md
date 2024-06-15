@@ -1,6 +1,6 @@
 # Frogger Game
 
---> DESCRIPTION
+The object of the game is to direct a frog to its home by crossing a busy road and navigating a river by jumping on logs using the arrow keys on the keyboard.
 
 ## Installation
 
