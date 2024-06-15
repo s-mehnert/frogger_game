@@ -2,11 +2,23 @@
     border: 1px solid;
     display: flex;
     flex-wrap: wrap;
-    height: 180px;
-    width: 180px;
+    height: 360px;
+    width: 360px;
 }
 
 .grid div {
-    height: 20px;
-    width: 20px;
+    height: 40px;
+    width: 40px;
+}
+
+.ending-block {
+    background-color: red;
+}
+
+.starting-block {
+    background-color: blue;
+}
+
+.frog {
+    background-color: green;
 }
