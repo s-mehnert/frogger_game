@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (currentIndex % width < width-1) currentIndex += 1;
                 break;
             case 40:
-                if (currentIndex + with < width*width) currentIndex += width;
+                if (currentIndex + width < width*width) currentIndex += width;
                 break;
         }
         squares[currentIndex].classList.add('frog');
-        lose();
-        win();
+        // lose();
+        // win();
     }
 });
