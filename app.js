@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeLeft = document.querySelector('#time-left');
     const result = document.querySelector('#result');
     const startBtn = document.querySelector('#button');
-    const carsLeft = document.querySelector('car-left');
-    const carsRight = document.querySelector('car-right');
-    const logsLeft = document.querySelector('log-left');
-    const logsRight = document.querySelector('log-right');
+    const carsLeft = document.querySelectorAll('car-left');
+    const carsRight = document.querySelectorAll('car-right');
+    const logsLeft = document.querySelectorAll('log-left');
+    const logsRight = document.querySelectorAll('log-right');
     const width = 9;
     let currentIndex = 76;
     let currentTime = 20;
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
         squares[currentIndex].classList.add('frog');
-        // lose();
-        // win();
+        lose();
+        win();
     }
 
     // move cars
@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 carRight.classList.add('c1');
                 break;
         }
+    }
+
+    // move logs
+    function autoMoveLogs() {
+        logsLeft.forEach(logLeft => moveLogLeft(logLeft));
+        logsRight.forEach(logRight => moveLobRight(logRight));     
     }
 
     // move log left on a timeloop
@@ -131,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // rules to win frogger
+    // rules to win
     function win() {
         if (squares[4],classList.contains('frog')) {
             result.innerHTML = 'YOU WIN';
@@ -141,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // rules to lose frogger
+    // rules to lose
     function lose() {
         if 
         (currentTime === 0) ||
@@ -155,4 +161,42 @@ document.addEventListener('DOMContentLoaded', () => {
             document.removeEventListener('keyup', moveFrog);
         }
     }
+
+    // move the frog when it's on the log
+    function moveWithLogLeft() {
+        if (currentIndex >= 27 && currentIndex < 35) {
+            squares[currentIndex].classList.remove('frog');
+            currentIndex += 1;
+            squares[currentIndex].classList.add('frog');
+        }
+    }
+
+    function moveWithLogRight() {
+        if (currentIndex > 18 && currentIndex <= 26) {
+            squares[currentIndex].classList.remove('frog');
+            currentIndex -= 1;
+            squares[currentIndex].classList.add('frog');
+        }
+    }
+
+    // move all pieces
+    function movePieces() {
+        currentTime--;
+        timeLeft.textContent = currentTime;
+        autoMoveCars();
+        autoMoveLogs();
+        moveWithLogLeft();
+        moveWithLogRight();
+        lose();
+    }
+
+    // start and pause game
+    startBtn.addEventListener('click', () => {
+        if (timerId) {
+            clearInterval(timerId);
+        } else {
+            timerId = setInterval(movePieces, 1000);
+            document.addEventListener('keyup', moveFrog);
+        }
+    });
 });
