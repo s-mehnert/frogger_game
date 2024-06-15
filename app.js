@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logsRight = document.querySelector('log-right');
     const width = 9;
     let currentIndex = 76;
+    let currentTime = 20;
     let timerId;
 
     // render frog on starting block
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
     }
+
     // move log right on a timeloop
     function moveLogRight(logRight) {
         switch (true) {
@@ -129,4 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // rules to win frogger
+    function win() {
+        if (squares[4],classList.contains('frog')) {
+            result.innerHTML = 'YOU WIN';
+            squares[currentIndex].classList.remove('frog');
+            clearInterval(timerId);
+            document.removeEventListener('keyup', moveFrog)
+        }
+    }
+
+    // rules to lose frogger
+    function lose() {
+        if 
+        (currentTime === 0) ||
+        (squares[currentIndex].classList.contains('c1')) || 
+        (squares[currentIndex].classList.contains('l4')) || 
+        (squares[currentIndex].classList.contains('l5')) 
+        {
+            result.innerHTML = 'YOU LOSE';
+            squares[currentIndex].classList.remove('frog');
+            clearInterval(timerId);
+            document.removeEventListener('keyup', moveFrog);
+        }
+    }
 });
