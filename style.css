@@ -1,12 +1,9 @@
-html {
-    margin: auto;
-}
-
 body {
     width: 450px;
     text-align: center;
     background-color: #31403d;
     color: lightgreen;
+    margin: auto;
 }
 
 a {
