@@ -1,11 +1,21 @@
+html {
+    margin: auto;
+}
+
 body {
     width: 450px;
     text-align: center;
+    background-color: #31403d;
+    color: lightgreen;
+}
+
+a {
+    color: lightgreen;
 }
 
 button {
-    background-color: purple;
-    color: white;
+    background-color: yellow;
+    color: rgb(81, 5, 5);
     font-weight: bold;
     height: 35px;
     width: 130px;
@@ -14,7 +24,7 @@ button {
 
 #result {
     font-weight: bold;
-    color: purple;
+    color: yellow;
     font-size: xx-large;
 }
 
@@ -24,7 +34,7 @@ button {
     flex-wrap: wrap;
     height: 450px;
     width: 450px;
-    background-color: rgb(211, 246, 194);
+    background-color: rgb(201, 249, 201);
 }
 
 .grid div {
